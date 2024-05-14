@@ -1,13 +1,280 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.App {
+  height: 100vh;
+  background-color: black;
+  position: relative;
+}
+
+.center {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 250px;
+}
+
+.welometext {
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welometext,
+.step-text,
+.input-box {
+  opacity: 0;
+  animation: FadeIn 2s forwards;
+}
+
+.stick-man-hi {
+  width: 75px;
+}
+
+.step-text {
+  font-size: 35px;
+  padding-bottom: 25px;
+}
+
+.input-box {
+  margin-left: 20px;
+  position: relative;
+}
+
+.search-box {
+  position: relative;
+}
+
+input {
+  width: 350px;
+
+  font-size: 20px;
+
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+input::placeholder {
+  font-size: 20px;
+  text-align: left;
+}
+
+input:focus {
+  outline: 5px solid #aaa;
+}
+
+button {
+  width: 200px;
+  color: #fff;
+  background-color: lightslategray;
+  font-size: 18px;
+
+  padding: 17px 7px;
+  border: none;
+  border-radius: 25px;
+  margin-left: 30px;
+
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: teal;
+}
+
+.back-button {
+  font-size: 30px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 80px;
+  left: 30px;
+
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  transform: scale(120%);
+}
+
+.search-result {
+  width: 190px;
+  color: #000;
+  background-color: #fff;
+  margin-top: 30px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  padding: 3px 15px;
+
+  cursor: pointer;
+}
+
+.weather-report {
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  padding: 40px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  opacity: 0.85;
+}
+
+hr {
+  border: 1px solid #f3f2f2;
+  margin: 2px;
+  margin-bottom: 3px;
+}
+
+.unit-position {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+
+.unit {
+  width: 35px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  border-radius: 25px;
+  background-color: #000;
+
+  margin: 0 2px 0 2px;
+}
+
+.ball-start {
+  justify-content: start;
+}
+
+.ball-end {
+  background-color: lightgoldenrodyellow;
+  justify-content: end;
+}
+
+.slider-top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.slider {
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.super {
+  font-size: 35px;
+}
+
+.temp,
+.sky-condition {
+  margin-bottom: 20px;
+}
+
+.place {
+  color: #006769;
+}
+
+.error {
+  color: #ec9840;
+}
+
+.may-be {
+  margin-top: 20px;
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background */
+
+.bg-cloudy {
+  background-image: url("../public/Images/cloudy-day.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-clear {
+  background-image: url("../public/Images/clear-day.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-rain {
+  background-image: url("../public/Images/rainy-day.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-thunder {
+  background-image: url("../public/Images/Thunderstorm-day.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-drizzle {
+  background-image: url("../public/Images/drizzle-day.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-haze {
+  background-image: url("../public/Images/hazy-day.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-weight: bold;
+}
+
+img {
+  height: 75px;
 }

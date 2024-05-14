@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import WeatherApp from "./WeatherApp";
 
 function App() {
+  const [background, setBackground] = useState("");
+
+  function changeBackground(res) {
+    setBackground(res);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={
+        background === "Clouds"
+          ? "App bg-cloudy"
+          : background === "Clear"
+          ? "App bg-clear"
+          : background === "Rain"
+          ? "App bg-rain"
+          : background === "Thunderstorm"
+          ? "App bg-thunder"
+          : background === "Drizzle"
+          ? "App bg-drizzle"
+          : background === "Haze" ||
+            background === "smoke" ||
+            background === "mist"
+          ? "App bg-haze"
+          : "App"
+      }
+    >
+      <div className="logo-box">
+        <img src="./Images/weather-app-logo.png" alt="logo" />
+        My Weather App
+      </div>
+      <WeatherApp background={changeBackground} />
     </div>
   );
 }
