@@ -284,6 +284,7 @@ img {
 @media only screen and (max-width: 450px) {
   .logo-box {
     font-size: 25px;
+    justify-content: center;
   }
 
   img {
@@ -328,7 +329,7 @@ img {
     width: 150px;
     padding: 12px 7px;
     border-radius: 15px;
-    bottom: -4px;
+    bottom: -1px;
   }
 
   .unit-position {
